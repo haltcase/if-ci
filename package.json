@@ -1,7 +1,7 @@
 {
   "name": "if-ci",
   "version": "1.0.1",
-  "description": "Easily run npm scripts only when in a CI environment.",
+  "description": "Easily run npm scripts only when in (or not in) a CI environment.",
   "author": {
     "name": "Bo Lingen",
     "email": "lingenbw@gmail.com",
@@ -27,7 +27,8 @@
     "appveyor"
   ],
   "bin": {
-    "if-ci": "./bin/index.js"
+    "if-ci": "./bin/if-ci.js",
+    "if-not-ci": "./bin/if-not-ci.js"
   },
   "files": [
     "bin"

@@ -2,19 +2,33 @@ import test from 'ava'
 import execa from 'execa'
 import { resolve } from 'path'
 
-const bin = resolve(__dirname, '..', 'bin', 'index.js')
+const ifCI = resolve(__dirname, '..', 'bin', 'if-ci.js')
+const ifNotCI = resolve(__dirname, '..', 'bin', 'if-not-ci.js')
 const cwd = resolve(__dirname, 'fixtures')
 const args = ['npm', 'run', 'hello']
 
-test('runs the given command when in a CI environment', async t => {
+test('if-ci: runs the given command when in a CI environment', async t => {
   const env = { CI: true }
-  const result = await execa(bin, args, { cwd, env })
+  const result = await execa(ifCI, args, { cwd, env })
   const lines = result.stdout.split(/\r?\n/g)
 
   t.is(lines[lines.length - 1], 'yo what up')
 })
 
-test('does not run the given command when not in a CI environment', async t => {
-  const error = await t.throws(execa(bin, args, { cwd, extendEnv: false }))
+test('if-ci: does not run the given command when not in a CI environment', async t => {
+  const error = await t.throws(execa(ifCI, args, { cwd, extendEnv: false }))
+  t.is(error.code, 1)
+})
+
+test('if-not-ci: runs the given command when not in a CI environment', async t => {
+  const result = await execa(ifNotCI, args, { cwd, extendEnv: false })
+  const lines = result.stdout.split(/\r?\n/g)
+
+  t.is(lines[lines.length - 1], 'yo what up')
+})
+
+test('if-not-ci: does not run the given command when in a CI environment', async t => {
+  const env = { CI: true }
+  const error = await t.throws(execa(ifNotCI, args, { cwd, env }))
   t.is(error.code, 1)
 })
