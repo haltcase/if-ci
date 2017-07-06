@@ -37,8 +37,8 @@
     "prepublish": "npm test"
   },
   "dependencies": {
-    "ci-info": "^1.0.0",
-    "execa": "^0.7.0"
+    "execa": "^0.7.0",
+    "is-ci": "^1.0.10"
   },
   "devDependencies": {
     "ava": "^0.20.0",
