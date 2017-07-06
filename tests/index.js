@@ -16,8 +16,8 @@ test('if-ci: runs the given command when in a CI environment', async t => {
 })
 
 test('if-ci: does not run the given command when not in a CI environment', async t => {
-  const error = await t.throws(execa(ifCI, args, { cwd, extendEnv: false }))
-  t.is(error.code, 1)
+  const result = await execa(ifCI, args, { cwd, extendEnv: false })
+  t.is(result.code, 0)
 })
 
 test('if-not-ci: runs the given command when not in a CI environment', async t => {
@@ -29,6 +29,6 @@ test('if-not-ci: runs the given command when not in a CI environment', async t =
 
 test('if-not-ci: does not run the given command when in a CI environment', async t => {
   const env = { CI: true }
-  const error = await t.throws(execa(ifNotCI, args, { cwd, env }))
-  t.is(error.code, 1)
+  const result = await execa(ifNotCI, args, { cwd, env })
+  t.is(result.code, 0)
 })

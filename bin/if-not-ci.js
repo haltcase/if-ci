@@ -3,4 +3,9 @@
 
 const ifCI = require('..')
 
-ifCI(false)
+const argv = process.argv.slice(2)
+const command = argv[0]
+const args = argv.slice(1)
+
+ifCI(false, command, args)
+  .then(result => process.exit(result.code))
