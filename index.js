@@ -3,8 +3,8 @@
 const isCI = require('is-ci')
 const execa = require('execa')
 
-module.exports = (requireCI, command, args) => {
-  if ((!isCI && requireCI) || (isCI && !requireCI)) {
+module.exports = (shouldBeCI, command, args) => {
+  if (isCI !== shouldBeCI) {
     return Promise.resolve({ code: 0 })
   }
 
