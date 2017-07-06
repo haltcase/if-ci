@@ -1,6 +1,6 @@
 {
   "name": "if-ci",
-  "version": "1.1.0",
+  "version": "2.0.1",
   "description": "Easily run npm scripts only when in (or not in) a CI environment.",
   "author": {
     "name": "Bo Lingen",
@@ -31,7 +31,8 @@
     "if-not-ci": "./bin/if-not-ci.js"
   },
   "files": [
-    "bin"
+    "bin",
+    "index.js"
   ],
   "scripts": {
     "test": "standard | snazzy && ava",
