@@ -1,6 +1,6 @@
 {
   "name": "if-ci",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily run npm scripts only when in a CI environment.",
   "author": {
     "name": "Bo Lingen",
