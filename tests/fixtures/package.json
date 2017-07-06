@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "hello": "echo \"yo what up\""
+    "hello": "echo \"it works!\""
   }
 }
