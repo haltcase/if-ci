@@ -1,0 +1,8 @@
+{
+  "name": "if-cli-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "hello": "echo \"yo what up\""
+  }
+}

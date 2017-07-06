@@ -1,0 +1,53 @@
+{
+  "name": "if-ci",
+  "version": "1.0.0",
+  "description": "Easily run npm scripts only when in a CI environment.",
+  "author": {
+    "name": "Bo Lingen",
+    "email": "lingenbw@gmail.com",
+    "url": "github.com/citycide"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/citycide/if-ci.git"
+  },
+  "homepage": "https://github.com/citycide/if-ci",
+  "bugs": "https://github.com/citycide/if-ci/issues",
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "npm",
+    "scripts",
+    "cli",
+    "ci",
+    "travis",
+    "circle",
+    "appveyor"
+  ],
+  "bin": {
+    "if-ci": "./bin/index.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "test": "standard | snazzy && ava",
+    "prepublish": "npm test"
+  },
+  "dependencies": {
+    "ci-info": "^1.0.0",
+    "execa": "^0.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
+  },
+  "ava": {
+    "files": [
+      "tests/*.js"
+    ]
+  }
+}
