@@ -35,17 +35,18 @@
     "index.js"
   ],
   "scripts": {
-    "test": "standard | snazzy && ava",
-    "prepublish": "npm test"
+    "lint": "standard | snazzy",
+    "test": "ava",
+    "prepublishOnly": "npm run lint && npm test"
   },
   "dependencies": {
-    "execa": "^0.7.0",
-    "is-ci": "^1.0.10"
+    "execa": "^1.0.0",
+    "is-ci": "^2.0.0"
   },
   "devDependencies": {
     "ava": "^1.1.0",
-    "snazzy": "^7.0.0",
-    "standard": "^10.0.2"
+    "snazzy": "^8.0.0",
+    "standard": "^12.0.1"
   },
   "ava": {
     "files": [
