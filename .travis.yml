@@ -5,8 +5,5 @@ node_js:
   - '8'
   - '6'
 
-before_install:
-  - if [[ `npm -v` == 2* ]]; then npm i -g npm@latest; fi
-
 notifications:
   email: false
