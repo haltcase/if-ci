@@ -15,7 +15,7 @@
   "homepage": "https://github.com/citycide/if-ci",
   "bugs": "https://github.com/citycide/if-ci/issues",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "keywords": [
     "npm",
