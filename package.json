@@ -43,7 +43,7 @@
     "is-ci": "^1.0.10"
   },
   "devDependencies": {
-    "ava": "^0.20.0",
+    "ava": "^1.1.0",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   },
